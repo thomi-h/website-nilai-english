@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+  padding-top: 5rem;
+}
+
+main {
+  width: 80%;
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+img {
+  width: 150px;
+}
+
+.login-wrapper {
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #dee1e6ff;
+  display: grid;
+  gap: 1rem;
+
+  img {
+    margin: 0 auto;
+  }
+
+  p {
+    color: #565d6dff;
+  }
+}
+
+form {
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+}
+
+.display-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  h2 {
+    padding: 2rem 0;
+    border-bottom: 2px solid #ccc;
+  }
+}
+
+.nilai-wrapper {
+  display: grid;
+  gap: 2rem;
+}
+
+.chapter {
+  text-align: left;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1.5rem;
+  border: 2px solid #ccc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.scores-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.score-item {
+  padding: 0.5rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-bottom: 1px solid #ccc;
+}
+
+.score-item p:last-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0078bdff;
+}
+
+/* SWAL Class */
+.swal2-html-container,
+.swal2-title {
+  font-family: "Nunito Sans", sans-serif !important;
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding-top: 2rem;
+  }
+  .nilai-wrapper {
+    gap: 2rem;
+  }
+  .chapter {
+    width: 100%;
+  }
+}
