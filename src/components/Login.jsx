@@ -1,9 +1,10 @@
 import { Button, TextField, NativeSelect } from "@mui/material";
+import logo from "../assets/TC_New.webp";
 
 export default function Login({ handleFormChange, handleClick, login }) {
   return (
     <div className="login-wrapper">
-      <img src="/src/assets/TC_New.webp" alt="TC Logo" />
+      <img src={logo} alt="TC Logo" />
       <h1>Welcome Back</h1>
       <p>Please login to view your child's academic progress.</p>
       <form action="">
