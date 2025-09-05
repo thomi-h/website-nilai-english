@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 import Swal from "sweetalert2";
 
 export default function ScorePage({ login, handleLogout }) {
@@ -26,6 +27,23 @@ export default function ScorePage({ login, handleLogout }) {
     cacheTime: 0,
   });
 
+  useEffect(() => {
+    if (error) {
+      handleLogout();
+    }
+  }, [error, handleLogout]);
+
+  useEffect(() => {
+    if (data && (data.error || Array.isArray(data) === false)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Ada kesalahan pada Nama, Kode Unik, atau Kelas. Silahkan coba lagi.",
+      });
+      handleLogout();
+    }
+  });
+
   if (isLoading) {
     return (
       <div className="display-wrapper">
@@ -35,17 +53,10 @@ export default function ScorePage({ login, handleLogout }) {
   }
 
   if (error) {
-    handleLogout();
     return;
   }
 
   if (data.error || Array.isArray(data) === false) {
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "Ada kesalahan pada Nama, Kode Unik, atau Kelas. Silahkan coba lagi.",
-    });
-    handleLogout();
     return;
   }
 
