@@ -8,10 +8,13 @@
   margin: 0 auto;
   text-align: center;
   font-family: "Nunito Sans", sans-serif;
-  padding-top: 5rem;
+  display: flex;
+  place-items: center;
+  height: 100svh;
 }
 
 main {
+  padding: 2rem 0;
   width: 80%;
   max-width: 400px;
   margin: auto;
